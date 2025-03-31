@@ -1,11 +1,11 @@
 'use client';
 import React, { useState } from 'react'
 import { HomeIcon, Layers2Icon, ShieldCheckIcon, CoinsIcon } from 'lucide-react';
-import Logo from './Logo';
+import Logo from './logo';
 import Link from 'next/link';
 import { buttonVariants } from './ui/button';
 import { usePathname } from 'next/navigation';
-import UserAvailableCreditsBadge from './user-available-credits-badge';
+// import UserAvailableCreditsBadge from './user-available-credits-badge';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import { Button } from './ui/button';
 import { MenuIcon } from 'lucide-react';
@@ -41,14 +41,14 @@ export function DesktopSidebar({}: DesktopSidebarProps) {
 
 
   return (
-    <div className="hidden relative md:block min-w-[220px] max-w-[280px] h-screen overflow-hidden w-full bg-primary/5 dark:bg-secondary/30 dark:text-foreground text-muted-foreground border-r-2 border-separate">
-      <div className="flex-items-center justify-center gap-2 border-b-[1px] border-separate p-4">
+    <div className="hidden relative md:block md:w-[180px] xl:w-full max-w-[240px] h-screen overflow-hidden w-full bg-primary/5 dark:bg-secondary/30 dark:text-foreground text-muted-foreground border-r-2 border-separate">
+      <div className="flex-items-center justify-center gap-2 p-4">
         <Logo />
       </div>
       <div className="p-2">
-        <UserAvailableCreditsBadge />
+        {/* <UserAvailableCreditsBadge /> */}
       </div>
-      <div className="flex flex-col p-2">
+      <div className="flex flex-col p-2 space-y-1">
         {routes.map((route) => (
           <Link
             key={route.href}
@@ -75,7 +75,7 @@ export function MobileSidebar({}: MobileSidebarProps) {
 
   return (
     <div className="block border-separate bg-background md:hidden">
-      <nav className="container flex items-center justify-between px-8">
+      <nav className="container flex items-center justify-between">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon">
@@ -84,7 +84,7 @@ export function MobileSidebar({}: MobileSidebarProps) {
           </SheetTrigger>
           <SheetContent className="w-[400px] sm:w-[540px] space-y-4" side="left">
             <Logo />
-            <UserAvailableCreditsBadge />
+            {/* <UserAvailableCreditsBadge /> */}
             <div className="flex flex-col gap-1">
               {routes.map((route) => (
                 <Link

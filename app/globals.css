@@ -90,8 +90,27 @@
   }
 }
 
-.react-flow__attribution {
-  background: transparent !important;
+/* Custom Scrollbar Styling */
+@layer utilities {
+  /* For Webkit browsers (Chrome, Safari) */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/40 transition-colors;
+  }
+
+  /* For Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground)/0.2) transparent;
+  }
 }
 
 .dark {

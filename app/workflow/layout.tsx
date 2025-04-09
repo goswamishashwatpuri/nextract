@@ -6,9 +6,7 @@ import { waitFor } from '@/lib/waitFor';
 export default function WorkflowLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col w-full h-screen">
-      <div className='flex-1'>
-        {children}
-      </div>
+      {children}
       <Separator />
       <footer className="flex items-center justify-between p-2">
         <Logo iconSize={16} fontSize="text-xl" />

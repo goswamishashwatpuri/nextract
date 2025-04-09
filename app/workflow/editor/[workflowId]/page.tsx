@@ -24,8 +24,8 @@ export default async function EditorPage({ params }: { params: { workflowId: str
   if (!workflow) {
     return <div>Workflow not found</div>;
   }
-  return (
-    <pre>{JSON.stringify(workflow, null, 2)}</pre>
-  )
-  // return <Editor workflow={workflow} />;
+  // return (
+  //   <pre>{JSON.stringify(workflow, null, 2)}</pre>
+  // )
+  return <Editor workflow={workflow} />;
 }

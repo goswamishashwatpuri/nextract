@@ -6,10 +6,10 @@ import { ChevronLeftIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import TooltipWrapper from '@/components/tooltip-wrapper';
 import SaveBtn from '@/app/workflow/_components/topbar/save-btn';
-// import ExecuteBtn from '@/app/workflow/_components/topbar/execute-btn';
-// import PublishBtn from '@/app/workflow/_components/topbar/publish-btn';
-// import UnpublishBtn from '@/app/workflow/_components/topbar/unpublish-btn';
-// import NavigationTabs from '@/app/workflow/_components/topbar/navigation-tabs';
+import ExecuteBtn from '@/app/workflow/_components/topbar/execute-btn';
+import PublishBtn from '@/app/workflow/_components/topbar/publish-btn';
+import UnpublishBtn from '@/app/workflow/_components/topbar/unpublish-btn';
+import NavigationTabs from '@/app/workflow/_components/topbar/navigation-tabs';
 
 interface Props {
   title: string;
@@ -35,7 +35,7 @@ export default function Topbar({ title, subtitle, workflowId, hideButtons = fals
           {subtitle && <p className="text-xs text-muted-foreground truncate text-ellipsis">{subtitle}</p>}
         </div>
       </div>
-      {/* <NavigationTabs workflowId={workflowId} />
+      <NavigationTabs workflowId={workflowId} />
       <div className="flex gap-1 flex-1 justify-end">
         {hideButtons === false && (
           <>
@@ -49,7 +49,7 @@ export default function Topbar({ title, subtitle, workflowId, hideButtons = fals
             )}
           </>
         )}
-      </div> */}
+      </div>
     </header>
   );
 }

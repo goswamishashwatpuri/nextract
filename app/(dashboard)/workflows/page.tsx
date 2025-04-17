@@ -3,7 +3,7 @@ import { getWorkflowsForUser } from '@/actions/workflows/get-workflow-for-user';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { AlertCircle } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
-import { waitFor } from '@/lib/waitFor';
+import { waitFor } from '@/lib/helper/waitFor';
 import { InboxIcon } from 'lucide-react';
 import React, { Suspense } from 'react'
 import CreateWorkflowDialog from './_components/create-workflow-dialog';

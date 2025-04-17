@@ -1,7 +1,7 @@
 import Logo from '@/components/logo';
 import { ModeToggle } from '@/components/theme-mode-toggle';
 import { Separator } from '@/components/ui/separator';
-import { waitFor } from '@/lib/waitFor';
+import { waitFor } from '@/lib/helper/waitFor';
 
 export default function WorkflowLayout({ children }: { children: React.ReactNode }) {
   return (

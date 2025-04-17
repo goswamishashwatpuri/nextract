@@ -3,7 +3,7 @@ import { auth } from '@clerk/nextjs/server';
 import Editor from '@/app/workflow/_components/editor';
 
 import prisma from '@/lib/prisma';
-import { waitFor } from '@/lib/waitFor';
+import { waitFor } from '@/lib/helper/waitFor';
 
 export default async function EditorPage({ params }: { params: { workflowId: string } }) {
   const { workflowId } = params;

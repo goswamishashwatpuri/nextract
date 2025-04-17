@@ -5,7 +5,7 @@ import Logo from './logo';
 import Link from 'next/link';
 import { buttonVariants } from './ui/button';
 import { usePathname } from 'next/navigation';
-// import UserAvailableCreditsBadge from './user-available-credits-badge';
+import UserAvailableCreditsBadge from './user-available-credits-badge';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import { Button } from './ui/button';
 import { MenuIcon } from 'lucide-react';
@@ -46,7 +46,7 @@ export function DesktopSidebar({}: DesktopSidebarProps) {
         <Logo />
       </div>
       <div className="p-2">
-        {/* <UserAvailableCreditsBadge /> */}
+        <UserAvailableCreditsBadge />
       </div>
       <div className="flex flex-col p-2 space-y-1">
         {routes.map((route) => (
@@ -84,7 +84,7 @@ export function MobileSidebar({}: MobileSidebarProps) {
           </SheetTrigger>
           <SheetContent className="w-[400px] sm:w-[540px] space-y-4" side="left">
             <Logo />
-            {/* <UserAvailableCreditsBadge /> */}
+            <UserAvailableCreditsBadge />
             <div className="flex flex-col gap-1">
               {routes.map((route) => (
                 <Link

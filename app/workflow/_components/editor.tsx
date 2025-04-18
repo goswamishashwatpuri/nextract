@@ -12,8 +12,7 @@ import { WorkflowStatus } from '@/types/workflow';
 
 export default function Editor({ workflow }: { workflow: Workflow }) {
   return (
-    <>
-      <FlowValidationContextProvider>
+    <FlowValidationContextProvider>
       <ReactFlowProvider>
         <div className="flex flex-col h-full w-full overflow-hidden">
           <Topbar
@@ -28,7 +27,6 @@ export default function Editor({ workflow }: { workflow: Workflow }) {
           </section>
         </div>
       </ReactFlowProvider>
-      </FlowValidationContextProvider>
-    </>
+    </FlowValidationContextProvider>
   );
 }

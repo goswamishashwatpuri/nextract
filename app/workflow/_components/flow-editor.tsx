@@ -102,7 +102,7 @@ export default function FlowEditor({ workflow }: { workflow: Workflow }) {
       if (connection.source === connection.target) {
         return false;
       }
-      console.log(connection);
+
       // Same taskParam type connection not allowed
       const source = nodes.find((node) => node.id === connection.source);
       const target = nodes.find((node) => node.id === connection.target);
@@ -131,7 +131,6 @@ export default function FlowEditor({ workflow }: { workflow: Workflow }) {
           if (outgoer.id === connection.source) return true;
           if (hasCycle(outgoer, visited)) return true;
         }
-        return false;  // Explicitly return false when no cycles are found
       };
 
       const detectedCycle = hasCycle(target);
@@ -144,7 +143,6 @@ export default function FlowEditor({ workflow }: { workflow: Workflow }) {
   return (
     <main className="h-full w-full">
       <ReactFlow
-        proOptions={{ hideAttribution: true }}
         nodes={nodes}
         edges={edges}
         onNodesChange={onNodesChange}
@@ -161,7 +159,7 @@ export default function FlowEditor({ workflow }: { workflow: Workflow }) {
         isValidConnection={isValidConnection}
       >
         <Controls position="top-left" fitViewOptions={fitViewOptions} />
-        <Background variant={BackgroundVariant.Dots} gap={10} size={1} />
+        <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
       </ReactFlow>
     </main>
   );

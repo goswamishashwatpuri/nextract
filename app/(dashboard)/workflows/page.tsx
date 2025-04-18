@@ -1,13 +1,12 @@
 'use server'
-import { getWorkflowsForUser } from '@/actions/workflows/get-workflow-for-user';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { AlertCircle } from 'lucide-react';
-import { Skeleton } from '@/components/ui/skeleton';
-import { waitFor } from '@/lib/helper/waitFor';
-import { InboxIcon } from 'lucide-react';
 import React, { Suspense } from 'react'
+import { AlertCircle, InboxIcon } from 'lucide-react';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Skeleton } from '@/components/ui/skeleton';
+
 import CreateWorkflowDialog from './_components/create-workflow-dialog';
 import WorkflowCard from './_components/workflow-card';
+import { getWorkflowsForUser } from '@/actions/workflows/get-workflows-for-user';
 
 
 export default async function WorkflowsPage() {
@@ -42,7 +41,6 @@ function UserWorkflowsSkeleton() {
 
 async function UserWorkflows() {
   const workflows = await getWorkflowsForUser();
-  await waitFor(3000);
 
   if (!workflows) {
     return (

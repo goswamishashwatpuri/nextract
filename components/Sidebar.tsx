@@ -41,7 +41,7 @@ export function DesktopSidebar({}: DesktopSidebarProps) {
 
 
   return (
-    <div className="hidden relative md:block md:w-[180px] xl:w-full max-w-[240px] h-screen overflow-hidden w-full bg-primary/5 dark:bg-secondary/30 dark:text-foreground text-muted-foreground border-r-2 border-separate">
+    <div className="hidden relative md:block md:w-[180px] lg:w-[200px] max-w-[240px] h-screen overflow-hidden w-full bg-primary/5 dark:bg-secondary/30 dark:text-foreground text-muted-foreground border-r-2 border-separate">
       <div className="flex-items-center justify-center gap-2 p-4">
         <Logo />
       </div>

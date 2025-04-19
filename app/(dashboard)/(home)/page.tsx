@@ -23,23 +23,31 @@ export default function HomePage({ searchParams }: { searchParams: { month?: str
   };
 
   return (
-    <div className="flex flex-1 flex-col h-full">
-      <div className="flex justify-between">
-        <h1 className="text-3xl font-bold">Home</h1>
-        <Suspense fallback={<Skeleton className="w-[180px] h-[40px]" />}>
+    <div className="flex flex-1 flex-col h-full animate-fade-in">
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          Overview
+        </h1>
+        <Suspense fallback={<Skeleton className="w-[180px] h-[40px] rounded-lg" />}>
           <PeriodSelectorWrapper selectedPeriod={period} />
         </Suspense>
       </div>
-      <div className="h-full py-6 flex flex-col gap-4">
+      <div className="h-full py-6 flex flex-col gap-8">
         <Suspense fallback={<StatsCardSkeleton />}>
           <StatsCards selectedPeriod={period} />
         </Suspense>
-        <Suspense fallback={<Skeleton className="w-full h-[300px]" />}>
-          <StatsExecutionStatus selectedPeriod={period} />
-        </Suspense>
-        <Suspense fallback={<Skeleton className="w-full h-[300px]" />}>
-          <CreditsUsageInPeriod selectedPeriod={period} />
-        </Suspense>
+        <div className="grid gap-8 lg:grid-cols-2">
+          <Suspense fallback={<Skeleton className="w-full h-[300px] rounded-xl" />}>
+            <div className="animate-slide-up">
+              <StatsExecutionStatus selectedPeriod={period} />
+            </div>
+          </Suspense>
+          <Suspense fallback={<Skeleton className="w-full h-[300px] rounded-xl" />}>
+            <div className="animate-slide-up [animation-delay:200ms]">
+              <CreditsUsageInPeriod selectedPeriod={period} />
+            </div>
+          </Suspense>
+        </div>
       </div>
     </div>
   );
@@ -67,7 +75,7 @@ function StatsCardSkeleton() {
   return (
     <div className="grid gap-3 lg:gap-8 lg:grid-cols-3">
       {[1, 2, 3].map((i) => (
-        <Skeleton key={i} className="w-full min-h-[120px]" />
+        <Skeleton key={i} className="w-full min-h-[120px] rounded-xl" />
       ))}
     </div>
   );

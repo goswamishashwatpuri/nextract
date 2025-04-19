@@ -38,7 +38,7 @@ export default function PeriodSelector({ selectedPeriod, periods }: { selectedPe
         router.push(`?${params.toString()}`);
       }}
     >
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger className="w-[180px] ring ring-1 ring-primary">
         <SelectValue />
       </SelectTrigger>
       <SelectContent>

@@ -32,7 +32,7 @@ async function ExecutionsTableWrapper({ workflowId }: { workflowId: string }) {
 
   if (executions.length === 0) {
     return (
-      <div className="container w-full py-6">
+      <div className="container w-full py-6 mx-auto">
         <div className="flex items-center flex-col gap-2 justify-center h-full w-full">
           <div className="rounded-full bg-accent w-20 h-20 flex items-center justify-center">
             <InboxIcon size={40} className="stroke-primary" />

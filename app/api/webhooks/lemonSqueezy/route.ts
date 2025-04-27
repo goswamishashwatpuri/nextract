@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
     const body = JSON.parse(rawBody);
 
     // Extract buyerUserId from the custom data in the webhook payload
-    const { buyerUserId, creditsToAdd, amount } = JSON.parse(body.meta.custom_data);
+    const { buyerUserId, creditsToAdd, amount } = JSON.parse(JSON.stringify(body.meta.custom_data));
 
     if (!buyerUserId || !creditsToAdd || !amount) {
       throw new Error("Invalid buyerUserId or creditsToAdd.");

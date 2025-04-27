@@ -2,9 +2,9 @@ import { Suspense } from 'react';
 import { CirclePlayIcon, CoinsIcon, WaypointsIcon } from 'lucide-react';
 
 import { Skeleton } from '@/components/ui/skeleton';
-import PeriodSelector from '@/app/(dashboard)/(home)/_components/period-selector';
-import StatsCard from '@/app/(dashboard)/(home)/_components/stats-card';
-import ExecutionStatusChart from '@/app/(dashboard)/(home)/_components/execution-status-chart';
+import PeriodSelector from '@/app/(dashboard)/dashboard/_components/period-selector';
+import StatsCard from '@/app/(dashboard)/dashboard/_components/stats-card';
+import ExecutionStatusChart from '@/app/(dashboard)/dashboard/_components/execution-status-chart';
 import CreditUsageChart from '@/app/(dashboard)/billing/_components/credit-usage-chart';
 
 import { getPeriods } from '@/actions/analytics/get-periods';

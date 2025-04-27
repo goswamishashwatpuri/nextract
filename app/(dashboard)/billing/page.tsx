@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import ReactCountUpWrapper from '@/components/react-count-up-wrapper';
 import CreditsPurchase from '@/app/(dashboard)/billing/_components/credits-purchase';
 import CreditUsageChart from '@/app/(dashboard)/billing/_components/credit-usage-chart';
-import InvoiceBtn from '@/app/(dashboard)/billing/_components/invoice-btn';
+// import InvoiceBtn from '@/app/(dashboard)/billing/_components/invoice-btn';
 
 import { getAvailableCredits } from '@/actions/billing/get-available-credits';
 import { getCreditsUsageInPeriod } from '@/actions/analytics/get-credits-usage-in-period';
@@ -116,7 +116,7 @@ async function TransactionHistoryCard() {
                 </div>
                 <div className="text-right space-y-2">
                   <p className="font-medium">{formatAmount(purchase.amount, purchase.currency)}</p>
-                  <InvoiceBtn id={purchase.id} />
+                  {/* <InvoiceBtn id={purchase.id} /> */}
                 </div>
               </div>
             ))}

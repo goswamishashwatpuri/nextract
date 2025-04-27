@@ -6,7 +6,7 @@ import { Layers2Icon, Loader2 } from 'lucide-react';
 import CustomDialogHeader from '@/components/custom-dialog-header';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { createWorkflowSchema, type CreateWorkflowSchemaType } from '@/schema/workflows';
+import { createWorkflowSchema, type createWorkflowSchemaType } from '@/schema/workflows';
 import { Input } from '@/components/ui/input';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormDescription, FormMessage } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
@@ -19,7 +19,7 @@ import { toast } from 'sonner';
 export default function CreateWorkflowDialog({ triggerText }: { triggerText?: string }) {
   const [open, setOpen] = useState(false);
 
-  const form = useForm<CreateWorkflowSchemaType>({
+  const form = useForm<createWorkflowSchemaType>({
     resolver: zodResolver(createWorkflowSchema),
     defaultValues: {},
   });
@@ -35,7 +35,7 @@ export default function CreateWorkflowDialog({ triggerText }: { triggerText?: st
   })
 
   const onSubmit = useCallback(
-    (values: CreateWorkflowSchemaType) => {
+    (values: createWorkflowSchemaType) => {
       toast.loading('Creating workflow...', { id: 'create-workflow' });
       mutate(values);
     },

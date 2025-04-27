@@ -102,7 +102,6 @@ model Credential {
 model UserPurchase {
   id          String   @id @default(cuid())
   userId      String
-  stripeId    String
   description String
   amount      Int
   currency    String

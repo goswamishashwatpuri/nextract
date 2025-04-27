@@ -136,7 +136,7 @@ export default function ExecutionViewer({ initialData }: { initialData: Executio
           ))}
         </div>
       </aside>
-      <div className="flex w-full h-full">
+      <div className="flex w-full h-full p-2">
         {isRunning && (
           <div className="flex items-center flex-col gap-2 justify-center h-full w-full">
             <p className="font-bold">Run is in progress, please wait</p>

@@ -185,7 +185,7 @@ function LastRunDetails({ workflow }: { workflow: Workflow }) {
   const { lastRunAt, lastRunStatus, lastRunId, nextRunAt } = workflow;
   const formattedStartedAt = lastRunAt && formatDistanceToNow(lastRunAt, { addSuffix: true });
 
-  const nextSchedule = nextRunAt && format(nextRunAt, 'yyyy-MM-dd HH:mm');
+  const nextSchedule = nextRunAt && format(nextRunAt, 'dd-MM-yyyy HH:mm');
   const nextScheduleUTC = nextRunAt && formatInTimeZone(nextRunAt, 'UTC', 'HH:mm');
 
   return (

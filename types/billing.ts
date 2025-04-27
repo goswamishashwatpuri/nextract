@@ -10,7 +10,7 @@ export type CreditsPack = {
   label: string;
   credits: number;
   price: number;
-  priceId: string;
+  lemonsqueezyVariantId: string;
 };
 
 export const CreditsPack: CreditsPack[] = [
@@ -19,24 +19,24 @@ export const CreditsPack: CreditsPack[] = [
     name: 'Small Pack',
     label: '1,000 credits',
     credits: 1000,
-    price: 999, // $9.99
-    priceId: process.env.STRIPE_SMALL_PACK_PRICE_ID!,
+    price: 9.99, // $9.99
+    lemonsqueezyVariantId: process.env.LEMON_SQUEEZY_VARIANT_ID_SMALL!,
   },
   {
     id: PackId.MEDIUM,
     name: 'Medium Pack',
     label: '5,000 credits',
     credits: 5000,
-    price: 3999, // $39.99
-    priceId: process.env.STRIPE_MEDIUM_PACK_PRICE_ID!,
+    price: 39, // $39.99
+    lemonsqueezyVariantId: process.env.LEMON_SQUEEZY_VARIANT_ID_MEDIUM!,
   },
   {
     id: PackId.LARGE,
     name: 'Large Pack',
     label: '10,000 credits',
     credits: 10000,
-    price: 6999, // $69.99
-    priceId: process.env.STRIPE_LARGE_PACK_PRICE_ID!,
+    price: 69, // $69.99
+    lemonsqueezyVariantId: process.env.LEMON_SQUEEZY_VARIANT_ID_LARGE!,
   },
 ];
 

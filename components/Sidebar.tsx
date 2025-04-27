@@ -9,6 +9,7 @@ import UserAvailableCreditsBadge from './user-available-credits-badge';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import { Button } from './ui/button';
 import { MenuIcon } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const routes = [
   {
@@ -34,14 +35,14 @@ const routes = [
 ];
 
 type DesktopSidebarProps = {}
-export function DesktopSidebar({}: DesktopSidebarProps) {
+export function DesktopSidebar({ }: DesktopSidebarProps) {
 
   const pathname = usePathname();
   const activeRoute = routes.find((route) => route.href.length > 0 && pathname.includes(route.href)) || routes[0];
 
 
   return (
-    <div className="hidden relative md:block md:w-[180px] lg:w-[200px] max-w-[240px] h-screen overflow-hidden w-full bg-primary/5 dark:bg-secondary/30 dark:text-foreground text-muted-foreground border-r-2 border-separate">
+    <div className="hidden relative md:block md:w-[180px] lg:w-[200px] max-w-[240px] h-screen overflow-hidden w-full dark:bg-secondary/30 dark:text-foreground text-muted-foreground border-r-2 border-separate">
       <div className="flex-items-center justify-center gap-2 p-4">
         <Logo />
       </div>
@@ -53,9 +54,11 @@ export function DesktopSidebar({}: DesktopSidebarProps) {
           <Link
             key={route.href}
             href={`/${route.href}`}
-            className={buttonVariants({
+            className={cn(buttonVariants({
               variant: activeRoute.href === route.href ? 'sidebarActiveItem' : 'sidebarItem',
-            })}
+            }),
+              activeRoute.href === route.href && 'shadow-md'
+            )}
           >
             <route.icon size={20} />
             {route.label}
@@ -67,7 +70,7 @@ export function DesktopSidebar({}: DesktopSidebarProps) {
 }
 
 type MobileSidebarProps = {}
-export function MobileSidebar({}: MobileSidebarProps) {
+export function MobileSidebar({ }: MobileSidebarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const pathname = usePathname();

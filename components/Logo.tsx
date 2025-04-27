@@ -16,13 +16,12 @@ export default function Logo({
   
   return (
     <Link href="/" className={cn('text-2xl font-bold flex items-center gap-2', fontSize)}>
-      <div className="rounded-lg bg-gradient-to-r from-primary to-primary/80 p-2">
-        <Compass size={iconSize} className="stroke-white dark:dark:text-stone-300" />
+      <div className="rounded-lg bg-gradient-to-r from-primary to-primary/90 p-2">
+        <Compass size={iconSize} className="stroke-white dark:dark:text-stone-100" />
       </div>
       <div>
-        <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">ne</span>
-        <span className="text-stone-700 dark:text-stone-300 text-[1.2em] font-medium">x</span>
-        <span className="text-stone-700 dark:text-stone-300">tract</span>
+        <span className="bg-gradient-to-r from-primary to-primary/90 bg-clip-text text-transparent">nex</span>
+        <span className="text-stone-700 dark:text-stone-100">tract</span>
       </div>
     </Link>
   );

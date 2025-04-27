@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 
 import { purchaseCredits } from '@/actions/billing/purchase-credits';
 import { CreditsPack, PackId } from '@/types/billing';
@@ -17,8 +18,10 @@ export default function CreditsPurchase() {
 
   const mutation = useMutation({
     mutationFn: purchaseCredits,
-    onSuccess: () => {},
-    onError: () => {},
+    onSuccess: () => { },
+    onError: () => {
+      toast.error("Error", { description: 'Failed to purchase credits' });
+    },
   });
 
   return (

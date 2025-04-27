@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { SquareDashedMousePointer, Send, Sigma, Compass } from 'lucide-react';
+import { Compass } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
@@ -13,7 +13,7 @@ export default function Logo({
   iconSize = 23
 }: Props) {
 
-  
+
   return (
     <Link href="/" className={cn('text-2xl font-bold flex items-center gap-2', fontSize)}>
       <div className="rounded-lg bg-gradient-to-r from-primary to-primary/90 p-2">
